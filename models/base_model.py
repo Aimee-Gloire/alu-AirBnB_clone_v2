@@ -4,7 +4,7 @@ import uuid
 from datetime import datetime
 # import important sqlalchemy modules
 from sqlalchemy import Column, String, DateTime, create_engine
-from sqlalchemy.ext.declarative import declarative_base # type: ignore
+from sqlalchemy.ext.declarative import declarative_base
 from os import environ
 
 # print format of create_engine
@@ -18,10 +18,16 @@ storage_type = 'HBNB_TYPE_STORAGE'
 
 class BaseModel:
     """A base class for all hbnb models"""
+    
+    id = Column(String(60), primary_key=True, nullable=False, default=str(uuid.uuid4()))
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow())
+    updated_at = Column(DateTime, nullable=False, default=datetime.utcnow())
+
+
     def __init__(self, *args, **kwargs):
         """Instatntiates a new model"""
-         """Instantiation of base model class
-        Args:
+        """Instantiation of base model class
+         Args:
             args: it won't be used
             kwargs: arguments for the constructor of the BaseModel
         Attributes:
