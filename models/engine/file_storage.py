@@ -15,7 +15,7 @@ class FileStorage:
         else:
             filtered_obj = {}
             for key, value in self.__objects.items():
-                if type(value) == cls:
+                if isinstance(value, cls):  # Use isinstance instead of type()
                     filtered_obj[key] = value
             return filtered_obj
 
@@ -26,7 +26,7 @@ class FileStorage:
     def delete(self, obj=None):
         """Deletes an object from the objects"""
         if obj is not None:
-            key = key = obj.__class__.__name__ + "." + obj.id
+            key = obj.__class__.__name__ + "." + obj.id
             if key in self.__objects:
                 del self.__objects[key]
                 self.save()
