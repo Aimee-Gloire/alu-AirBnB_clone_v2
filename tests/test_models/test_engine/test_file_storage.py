@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """test for file storage"""
 import unittest
-import pep8
+import pycodestyle
 import json
 import os
 from models.base_model import BaseModel
@@ -40,7 +40,7 @@ class TestFileStorage(unittest.TestCase):
 
     def test_pep8_FileStorage(self):
         """Tests pep8 style"""
-        style = pep8.StyleGuide(quiet=True)
+        style = pycodestyle.StyleGuide(quiet=True)
         p = style.check_files(['models/engine/file_storage.py'])
         self.assertEqual(p.total_errors, 0, "fix pep8")
 
