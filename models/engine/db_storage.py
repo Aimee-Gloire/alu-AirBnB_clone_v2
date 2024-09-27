@@ -13,7 +13,6 @@ from models.user import User
 from models.base_model import Base
 
 
-
 class DBStorage:
 
     # private class attributes
