@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """test for file storage"""
 import unittest
-import pep8
+import pycodestyle
 import json
 import os
 from models.base_model import BaseModel
