@@ -15,7 +15,7 @@ class FileStorage:
         else:
             filtered_obj = {}
             for key, value in self.__objects.items():
-                if isinstance(value, cls):  # Use isinstance instead of type()
+                if isinstance(value, cls):  
                     filtered_obj[key] = value
             return filtered_obj
 
