@@ -15,7 +15,7 @@ class FileStorage:
         else:
             filtered_obj = {}
             for key, value in self.__objects.items():
-                if isinstance(value, cls):  
+                if isinstance(value, cls):
                     filtered_obj[key] = value
             return filtered_obj
 
@@ -39,7 +39,7 @@ class FileStorage:
             for key, val in temp.items():
                 temp[key] = val.to_dict()
             json.dump(temp, f)
-
+            
     def reload(self):
         """Loads the storage dictionary from a file"""
         from models.base_model import BaseModel
