@@ -39,7 +39,7 @@ class FileStorage:
             for key, val in temp.items():
                 temp[key] = val.to_dict()
             json.dump(temp, f)
-            
+       
     def reload(self):
         """Loads the storage dictionary from a file"""
         from models.base_model import BaseModel
