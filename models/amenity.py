@@ -12,4 +12,4 @@ class Amenity(BaseModel, Base):
     """
     __tablename__ = 'amenities'
     name = Column(String(128), nullable=False)
-    place_id = Column(String(60), ForeignKey('places.id'), nullable=False)
+    # place_id = Column(String(60), ForeignKey('places.id'), nullable=False)
