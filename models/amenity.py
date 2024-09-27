@@ -13,5 +13,4 @@ class Amenity(BaseModel, Base):
     """
     __tablename__ = 'amenities'
     name = Column(String(128), nullable=False)
-     # Many-to-Many relationship with Place
-    place_amenities = relationship("Place", secondary=place_amenity, viewonly=False, back_populates="amenities")
+
