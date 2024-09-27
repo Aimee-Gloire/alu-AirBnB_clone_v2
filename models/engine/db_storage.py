@@ -13,9 +13,9 @@ from models.user import User
 from models.base_model import Base
 
 
-all_classes = {'State': State, 'City': City,
-               'User': User, 'Place': Place,
-               'Review': Review, 'Amenity': Amenity}
+# all_classes = {'State': State, 'City': City,
+#                'User': User, 'Place': Place,
+#                'Review': Review, 'Amenity': Amenity}
 
 
 class DBStorage:
