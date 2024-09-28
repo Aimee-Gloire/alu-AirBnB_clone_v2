@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """This is the state class"""
+import models
+from models.city import City
 from models.base_model import BaseModel, Base
 from sqlalchemy import Column, String
 from sqlalchemy.orm import relationship
@@ -20,18 +22,9 @@ class State(BaseModel, Base):
     else:
         @property
         def cities(self):
-            """Getter method for cities
-            Return: list of cities with state_id equal to self.id
-            """
-            from models import storage
-            from models.city import City
-            # return list of City objs in __objects
-            cities_dict = storage.all(City)
-            cities_list = []
-
-            # copy values from dict to list
-            for city in cities_dict.values():
+            city_list = []
+            for city in list(models.storage.all(City).values()):
                 if city.state_id == self.id:
-                    cities_list.append(city)
+                    city_list.append(city)
+            return city_list
 
-            return cities_list
