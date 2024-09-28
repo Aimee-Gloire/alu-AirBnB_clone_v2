@@ -2,7 +2,7 @@
 """Defines the FileStorage class."""
 import json
 from models.base_model import BaseModel
-from models.amenity import Amenity
+from models.amenity import Amenity  
 from models.city import City
 from models.place import Place
 from models.review import Review
@@ -28,11 +28,11 @@ class FileStorage:
         Otherwise, returns the __objects dictionary.
         """
         if cls is not None:
-            if type(cls) == str:
+            if isinstance(cls, str):
                 cls = eval(cls)
             cls_dict = {}
             for k, v in self.__objects.items():
-                if type(v) == cls:
+                if isinstance(v, cls):
                     cls_dict[k] = v
             return cls_dict
         return self.__objects
